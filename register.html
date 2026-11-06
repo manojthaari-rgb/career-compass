@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration | Career Compass</title>
+
+    <!-- Prevent white background flash during page loading -->
+    <style>
+        html {
+            background-color: #080817;
+            color-scheme: dark;
+        }
+
+        body {
+            background-color: #080817;
+            margin: 0;
+        }
+    </style>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body class="register-body">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            ✦ CAREER<span>COMPASS</span>
+        </a>
+
+        <a href="index.html" class="nav-button">← Back Home</a>
+    </nav>
+
+
+    <!-- REGISTRATION FORM -->
+    <main class="register-container">
+
+        <div class="register-heading">
+
+            <div class="section-label">LET'S GET STARTED</div>
+
+            <h1>Tell Us About <span>You.</span></h1>
+
+            <p>
+                Before discovering your career path,
+                let's get to know you better.
+            </p>
+
+        </div>
+
+
+        <form id="registrationForm">
+
+            <div class="form-group">
+
+                <label for="fullName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="city">City / Town</label>
+
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="Enter your city or town"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="state">State / District</label>
+
+                <input
+                    type="text"
+                    id="state"
+                    placeholder="Enter your state or district"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="country">Current Country</label>
+
+                <select id="country" required>
+
+                    <option value="">Select your country</option>
+
+                    <option value="India">India</option>
+
+                    <option value="Germany">Germany</option>
+
+                    <option value="USA">United States</option>
+
+                    <option value="UK">United Kingdom</option>
+
+                    <option value="Canada">Canada</option>
+
+                    <option value="Australia">Australia</option>
+
+                    <option value="Singapore">Singapore</option>
+
+                    <option value="Japan">Japan</option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PRIVACY AGREEMENT -->
+            <div class="privacy-box">
+
+                <input
+                    type="checkbox"
+                    id="privacy"
+                    required
+                >
+
+                <label for="privacy">
+                    I agree to provide this information for
+                    personalised career guidance.
+                </label>
+
+            </div>
+
+
+            <!-- SUBMIT BUTTON -->
+            <button
+                type="submit"
+                class="primary-button register-submit"
+            >
+                CONTINUE TO ASSESSMENT →
+            </button>
+
+
+            <p id="formMessage"></p>
+
+        </form>
+
+    </main>
+
+
+    <!-- MAIN JAVASCRIPT -->
+    <script src="static/js/main.js"></script>
+
+</body>
+</html>

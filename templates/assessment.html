@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Compass | Assessment</title>
+
+    <!-- Prevent white flash during page loading -->
+    <style>
+        html {
+            background-color: #080817;
+            color-scheme: dark;
+        }
+
+        body {
+            background-color: #080817;
+            margin: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../static/css/assessment.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="../index.html" class="logo">
+            CAREER <span>COMPASS</span>
+        </a>
+
+        <div class="header-label">
+            PERSONAL CAREER ASSESSMENT
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <section class="assessment-card">
+
+            <div class="welcome-text">
+                <span class="small-tag">YOUR FUTURE STARTS HERE</span>
+                <h1>Discover Your <span>Potential.</span></h1>
+                <p>Answer honestly. Every answer helps us understand your interests and career goals.</p>
+            </div>
+
+            <div class="progress-section">
+
+                <div class="progress-details">
+                    <span id="questionCounter">QUESTION 1 OF 21</span>
+                    <span id="progressPercentage">5%</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+
+            </div>
+
+            <div class="question-section">
+
+                <span id="questionCategory" class="category-tag">
+                    PROFILE INFORMATION
+                </span>
+
+                <h2 id="questionTitle"></h2>
+
+                <p id="questionDescription"></p>
+
+                <div id="answerOptions" class="answer-options"></div>
+
+                <!-- OTHER ANSWER -->
+
+                <div id="otherContainer" class="other-container" style="display:none;">
+
+                    <label for="otherAnswer">
+                        Please specify your answer:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="otherAnswer"
+                        placeholder="Type your answer here..."
+                    >
+
+                </div>
+
+                <!-- Q21 CONCLUSION -->
+
+                <div id="conclusionContainer" style="display:none;">
+
+                    <div class="conclusion-heading">
+                        <h3>Tell Us Your Dream!</h3>
+
+                        <p>
+                            This is your space to express your complete vision.
+                            Tell us everything about your interests, ambitions
+                            and future plans.
+                        </p>
+                    </div>
+
+                    <div class="suggestion-box">
+                        You can mention:
+                        <ul>
+                            <li>Your interests and passions</li>
+                            <li>Courses you want to pursue</li>
+                            <li>Your dream career or job role</li>
+                            <li>Countries where you want to study or work</li>
+                            <li>Your expected salary and financial goals</li>
+                            <li>Preferred colleges or universities</li>
+                            <li>Skills you want to develop</li>
+                            <li>Scholarships or other requirements</li>
+                        </ul>
+                    </div>
+
+                    <textarea
+                        id="conclusionAnswer"
+                        placeholder="Tell us your complete career dream here...
+
+Example: I am interested in Artificial Intelligence and Cybersecurity. I want to pursue a course related to these fields and eventually become a Cybersecurity Professional. My dream is to work in Germany. I would like to explore good colleges, scholarships, international job opportunities and salary prospects.
+
+Share your own interests, dreams and expectations..."
+                    ></textarea>
+
+                    <p class="privacy-note">
+                        Your answers will help us create personalised career recommendations.
+                    </p>
+
+                </div>
+
+                <p id="errorMessage" class="error-message"></p>
+
+            </div>
+
+            <div class="button-section">
+
+                <button id="previousButton" class="previous-button" disabled>
+                    ← Previous
+                </button>
+
+                <button id="nextButton" class="next-button">
+                    Next →
+                </button>
+
+            </div>
+
+            <div class="bottom-note">
+                CAREER COMPASS · YOUR FUTURE, YOUR CHOICE
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../static/js/assessment.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #090713;
+    --card: #151123;
+    --purple: #b026ff;
+    --light-purple: #d18aff;
+    --white: #ffffff;
+    --muted: #aaa4bd;
+    --border: rgba(176, 38, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+.dashboard-header {
+    min-height: 72px;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+    background: #0d0a18;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.dashboard-nav {
+    display: flex;
+    gap: 23px;
+    flex-wrap: wrap;
+}
+
+.dashboard-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.dashboard-nav a:hover {
+    color: var(--light-purple);
+}
+
+/* MAIN */
+
+.dashboard-container {
+    width: 88%;
+    max-width: 1200px;
+    margin: 45px auto;
+}
+
+.dashboard-section {
+    margin-bottom: 55px;
+    scroll-margin-top: 30px;
+}
+
+/* WELCOME */
+
+.welcome-section {
+    padding: 48px;
+    margin-bottom: 45px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(176,38,255,0.2), transparent 40%),
+        linear-gradient(135deg, #1c1230, #100d1b);
+}
+
+.section-label {
+    color: var(--light-purple);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.welcome-section h1 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin-bottom: 12px;
+}
+
+.welcome-section h1 span {
+    color: var(--light-purple);
+}
+
+.welcome-section h2 {
+    font-size: 19px;
+    margin: 18px 0 8px;
+}
+
+.welcome-section h2 span {
+    color: var(--light-purple);
+}
+
+.welcome-section p:not(.section-label) {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* GENERAL CARDS */
+
+.student-profile,
+.personality-code-card,
+.personality-description-card,
+.chart-card,
+.score-card,
+.recommendation-card,
+.student-conclusion {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 23px;
+}
+
+.student-profile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.student-profile > div {
+    padding: 12px;
+    background: rgba(176,38,255,0.06);
+    border-radius: 8px;
+}
+
+/* PERSONALITY */
+
+.personality-summary {
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.personality-code-card {
+    background: linear-gradient(145deg, #29133d, #151123);
+}
+
+.personality-code-card h1 {
+    color: var(--light-purple);
+    font-size: 48px;
+    letter-spacing: 5px;
+    margin: 12px 0;
+}
+
+.personality-code-card p,
+.personality-description-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.personality-description-card h3,
+.chart-card h3,
+.score-card h3 {
+    margin-bottom: 12px;
+}
+
+.profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.profile-tags span {
+    color: var(--light-purple);
+    background: rgba(176,38,255,0.12);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 11px;
+    font-size: 11px;
+}
+
+/* CHART AND SCORES */
+
+.riasec-analysis-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 18px;
+}
+
+.chart-container {
+    height: 300px;
+    max-width: 450px;
+    margin: auto;
+}
+
+.score-row {
+    margin: 17px 0;
+}
+
+.score-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.score-info span:last-child {
+    color: var(--light-purple);
+}
+
+.score-track {
+    height: 7px;
+    background: #30283e;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8124d5, #d18aff);
+    border-radius: 20px;
+}
+
+.accuracy-note {
+    color: #898296;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+/* RECOMMENDATIONS */
+
+.recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.recommendation-card {
+    transition: 0.25s;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--purple);
+}
+
+.recommendation-number {
+    color: var(--light-purple);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.recommendation-card h3 {
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.recommendation-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ROADMAP */
+
+.roadmap-container {
+    display: grid;
+    gap: 13px;
+}
+
+.roadmap-item {
+    padding: 18px 22px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 9px;
+}
+
+.roadmap-item h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.roadmap-item p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* CONCLUSION */
+
+.student-conclusion {
+    color: #ddd6e9;
+    font-size: 13px;
+    line-height: 1.9;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* ACTIONS */
+
+.dashboard-actions {
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 50px;
+    background: #151123;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.dashboard-actions h2 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.dashboard-actions p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-button {
+    color: white;
+    background: linear-gradient(90deg, #8124d5, #b026ff);
+    border: none;
+}
+
+.primary-button:hover {
+    box-shadow: 0 0 18px rgba(176,38,255,0.35);
+}
+
+.secondary-button {
+    color: white;
+    background: transparent;
+    border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+    border-color: var(--purple);
+    color: var(--light-purple);
+}
+
+/* FOOTER */
+
+.dashboard-footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.dashboard-footer p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .dashboard-header {
+        flex-direction: column;
+    }
+
+    .dashboard-nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .personality-summary,
+    .riasec-analysis-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .dashboard-container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .welcome-section {
+        padding: 27px;
+    }
+
+    .student-profile,
+    .recommendation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+}

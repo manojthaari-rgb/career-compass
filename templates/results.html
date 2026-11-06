@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Compass | Dashboard</title>
+
+    <!-- Prevent white flash during page loading -->
+    <style>
+        html {
+            background-color: #080817;
+            color-scheme: dark;
+        }
+
+        body {
+            background-color: #080817;
+            margin: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../static/css/results.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+
+        <a href="../index.html" class="logo">
+            ✦ CAREER COMPASS
+        </a>
+
+        <nav class="dashboard-nav">
+            <a href="#overview">Overview</a>
+            <a href="#personality">RIASEC</a>
+            <a href="#courses">Courses</a>
+            <a href="#careers">Careers</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#vision-analysis">Career Vision</a>
+        </nav>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+        <!-- WELCOME -->
+        <section class="welcome-section" id="overview">
+
+            <div>
+                <p class="section-label">YOUR CAREER DASHBOARD</p>
+
+                <h1>Your Future Starts <span>Here.</span></h1>
+
+                <h2>
+                    Welcome, <span id="studentName">Student</span>!
+                </h2>
+
+                <p>
+                    Your career assessment is complete.
+                    Here is your personalised career overview.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- STUDENT PROFILE -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <p class="section-label">YOUR DETAILS</p>
+                <h2>Student Profile</h2>
+            </div>
+
+            <div id="studentProfile" class="student-profile"></div>
+
+        </section>
+
+
+        <!-- RIASEC -->
+        <section class="dashboard-section" id="personality">
+
+            <div class="section-heading">
+                <p class="section-label">INTEREST ANALYSIS</p>
+                <h2>Your Personality Profile</h2>
+            </div>
+
+            <div class="personality-summary">
+
+                <div class="personality-code-card">
+
+                    <p>Your Holland Code</p>
+
+                    <h1 id="hollandCode">---</h1>
+
+                    <p id="topInterest"></p>
+
+                </div>
+
+                <div class="personality-description-card">
+
+                    <h3>Your Interest Profile</h3>
+
+                    <p id="profileDescription"></p>
+
+                    <div id="profileTags" class="profile-tags"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="riasec-analysis-grid">
+
+                <div class="chart-card">
+
+                    <h3>RIASEC Interest Chart</h3>
+
+                    <div class="chart-container">
+                        <canvas id="riasecChart"></canvas>
+                    </div>
+
+                </div>
+
+                <div class="score-card">
+
+                    <h3>Interest Scores</h3>
+
+                    <div id="scoreBars"></div>
+
+                </div>
+
+            </div>
+
+            <p class="accuracy-note">
+                This assessment is an initial career exploration guide,
+                not a psychological diagnosis.
+            </p>
+
+        </section>
+
+
+        <!-- COURSES -->
+        <section class="dashboard-section" id="courses">
+
+            <div class="section-heading">
+                <p class="section-label">ACADEMIC DIRECTION</p>
+                <h2>Recommended Courses</h2>
+                <p>Four courses selected based on your interests.</p>
+            </div>
+
+            <div id="courseRecommendations" class="recommendation-grid"></div>
+
+        </section>
+
+
+        <!-- CAREERS -->
+        <section class="dashboard-section" id="careers">
+
+            <div class="section-heading">
+                <p class="section-label">PROFESSIONAL FUTURE</p>
+                <h2>Recommended Careers</h2>
+                <p>Explore four career paths that may suit your profile.</p>
+            </div>
+
+            <div id="careerRecommendations" class="recommendation-grid"></div>
+
+        </section>
+
+
+        <!-- CAREER ROADMAP -->
+        <section class="dashboard-section" id="roadmap">
+
+            <div class="section-heading">
+                <p class="section-label">YOUR ACTION PLAN</p>
+                <h2>Career Roadmap</h2>
+                <p>A simple path towards your professional goals.</p>
+            </div>
+
+            <div id="careerRoadmap" class="roadmap-container"></div>
+
+        </section>
+
+
+        <!-- CAREER VISION ANALYSIS -->
+        <section class="dashboard-section" id="vision-analysis">
+
+            <div class="section-heading">
+
+                <p class="section-label">YOUR AMBITION</p>
+
+                <h2>Career Vision Analysis</h2>
+
+                <p>
+                    Your ambition matters. Let's turn your vision
+                    into a practical career direction.
+                </p>
+
+            </div>
+
+
+            <!-- ORIGINAL CAREER VISION -->
+            <div class="dream-card">
+
+                <h3>✦ Your Career Vision</h3>
+
+                <p id="originalVision">
+                    Your career vision will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- VISION ANALYSIS CARDS -->
+            <div class="recommendation-grid">
+
+
+                <!-- VISION SUMMARY -->
+                <div class="recommendation-card">
+
+                    <h3>🎯 Vision Summary</h3>
+
+                    <p id="visionSummary">
+                        Analysing your ambition...
+                    </p>
+
+                </div>
+
+
+                <!-- IDENTIFIED INTERESTS -->
+                <div class="recommendation-card">
+
+                    <h3>🔍 Identified Interests</h3>
+
+                    <div id="visionInterests"></div>
+
+                </div>
+
+
+                <!-- SUGGESTED CAREERS -->
+                <div class="recommendation-card">
+
+                    <h3>💼 Suggested Career Paths</h3>
+
+                    <div id="visionCareers"></div>
+
+                </div>
+
+
+                <!-- SKILLS TO DEVELOP -->
+                <div class="recommendation-card">
+
+                    <h3>🧠 Skills to Develop</h3>
+
+                    <div id="visionSkills"></div>
+
+                </div>
+
+
+                <!-- RECOMMENDED STEPS -->
+                <div class="recommendation-card">
+
+                    <h3>🚀 Recommended Next Steps</h3>
+
+                    <div id="visionSteps"></div>
+
+                </div>
+
+
+                <!-- PERSONAL FEEDBACK -->
+                <div class="recommendation-card">
+
+                    <h3>💡 Personalised Feedback</h3>
+
+                    <p id="visionFeedback">
+                        Your personalised feedback will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIONS -->
+        <section class="dashboard-actions">
+
+            <h2>Keep Moving Forward</h2>
+
+            <p>
+                Your career journey starts with the choices you make today.
+            </p>
+
+            <div class="action-buttons">
+
+                <button class="primary-button"
+                    onclick="downloadCareerReport()">
+                    Download Career Report
+                </button>
+
+                <button class="secondary-button"
+                    onclick="editAssessment()">
+                    Edit Answers
+                </button>
+
+                <button class="secondary-button"
+                    onclick="retakeAssessment()">
+                    Retake Assessment
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+
+        <a href="../index.html" class="logo">
+            ✦ CAREER COMPASS
+        </a>
+
+        <p>
+            Discover Your Interests. Choose Your Course. Build Your Future.
+        </p>
+
+        <p>© 2026 Career Compass</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <!-- PDF GENERATION LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- DASHBOARD JAVASCRIPT -->
+    <script src="../static/js/results.js"></script>
+
+</body>
+
+</html>
